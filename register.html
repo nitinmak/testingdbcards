@@ -1,0 +1,275 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<!-- Mirrored from enableds.com/products/kolor3/page-signup.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 16 Apr 2019 08:17:58 GMT -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+<title>Kolor | HTML, CSS & JS Mobile Template | Epsilon X </title>
+<link rel="stylesheet" type="text/css" href="fonts/css/fontawesome-all.min.css">
+<link rel="stylesheet" type="text/css" href="styles/framework.css">
+<link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+</head>
+<body>
+<div id="preloader" class="preloader-light">
+<h1 class="center-text color-black ultrabold uppercase bottom-0 fa-2x">Kolor</h1>
+<div id="preload-spinner"></div>
+<p>Beautifully Crafted UI & UX.</p>
+<em>This will only take a second. It's totally worth it!</em>
+</div>
+<div id="page-transitions" class="page-build">
+<div class="page-bg gradient-body-1"></div>
+
+<div class="page-content header-clear-larger" style="    padding-top: 40px;">
+<div class="page-login bg-white">
+	 <form id="register_form" method="post">
+<div class="content bottom-0">
+<h3 class="uppercase ultrabold bottom-0 top-10">Register</h3>
+<p class="smaller-text bottom-0">Register now. It's free!</p>
+<div class="page-login-field top-15">
+<i class="fa fa-user"></i>
+<input type="text"  name="name" id="name"  onkeypress="return ((event.charCode >= 65 &amp;&amp; event.charCode <= 90) || (event.charCode >= 97 &amp;&amp; event.charCode <= 122) || (event.charCode == 32))" placeholder="Select a Username">
+
+</div>
+<div class="page-login-field">
+<i class="fa fa-at"></i>
+<input type="email" name="email" id="email" onchange="check_email_exist();" placeholder="Your your Email">
+
+</div>
+<div class="page-login-field">
+<i class="fa fa-phone"></i>
+<input  type="tel" min="0" name="mobile" id="phone" minlength="10" maxlength="10" placeholder="Enter a Phone">
+
+</div>
+<div class="page-login-field bottom-30">
+<i class="fa fa-lock"></i>
+<input type="password" name="password" id="password" onchange="check_repass();" placeholder=" Password">
+
+</div>
+<div class="page-login-field bottom-30">
+<i class="fa fa-lock"></i>
+<input type="password" name="re_pass" id="re_pass" onchange="check_repass();" placeholder="Confirm  Password">
+
+</div>
+<div class="page-login-field bottom-30">
+<i class="fa fa-user"></i>
+<input type="text" name="Refferal" id="Refferal" placeholder="Refferal">
+</div>
+<div class="page-login-links bottom-10">
+<a class="forgot center-text" href="index.html"><i class="fa fa-user float-right"></i>Alread registered? Sign in here</a>
+<div class="clear"></div>
+</div>
+<input type="hidden" value="virus" name="secrete"  >
+
+<input type="submit" id="register_btn" class="button button-blue bottom-30 button-full button-round shadow-icon-large button-s uppercase ultrabold" value="Register Account">
+
+<p id="toast" class="toast toast-top toast-small bg-blue-dark">Toast is actually quite delicious!</p>
+</div>
+</form>
+</div>
+
+
+<script type="text/javascript" src="scripts/jquery.js"></script>
+<script type="text/javascript" src="scripts/plugins.js"></script>
+<script type="text/javascript" src="scripts/custom.js"></script>
+<script type="text/javascript" src="scripts/custom.js"></script>
+<script type="text/javascript" src="scripts/jquery.validate.js"></script>
+ <script type="text/javascript">
+     // $('#alert_msg').click();
+
+        function check_email_exist(){
+     
+         var email = $('#email').val();
+         var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
+
+         if(email != ''){
+            if (testEmail.test(email)){
+             // alert("hii");
+            }
+            else{
+                myApp.alert("Please Enter Valid Email-Id");
+                $('#email').val('');
+                }
+            }
+
+         if(email != ''){
+                 jQuery.ajax({
+                            type: 'POST',
+                            data: {'action': 'check_email', 'email': email},
+                            url: 'https://digitalbcards.in/ajax.php',
+                            success: function (data) {
+                              // alert(data);
+                                if(data){
+$('#toast').html('Email-Id Already Exist.');
+$('#toast').addClass('show-toast');
+setTimeout(function(){ 
+$('#toast').removeClass('show-toast');
+ }, 1200);
+                                    $('#email').val('');
+                                }
+                                
+                            },
+                            error: function (e) {
+
+                            }
+                            });
+             }
+        
+        }
+
+
+        function check_repass(){
+
+         var pass = $('#password').val();
+         var re_pass = $('#re_pass').val();
+         if(pass != '' && re_pass != ''){
+           if(pass != re_pass){
+            //myApp.alert('Password not matched.');
+            $('#toast').html('Password not matched.');
+$('#toast').addClass('show-toast');
+setTimeout(function(){ 
+$('#toast').removeClass('show-toast');
+ }, 1200);
+            $('#re_pass').val('');
+           }
+         }
+
+        }
+           $(document).ready(function () {
+
+           	    jQuery('#Refferal').keyup(function() {
+    $(this).val($(this).val().toUpperCase());
+  });
+
+          
+         $("#Refferal").on('keypress', function (event) {
+    var regex = new RegExp("^[a-zA-Z0-9]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+       event.preventDefault();
+       return false;
+    }
+});
+    
+        
+ 
+$('#register_form').validate({ // initialize the plugin
+        errorLabelContainer: "#cs-error-note",
+   
+     errorClass: 'errors',
+    rules: {
+     
+        name: {
+           
+            required: true,
+           
+            
+        },
+        mobile: {
+           
+            required: true,
+            number:true,
+            maxlength:10,
+            minlength:10,
+           
+            
+        },
+        email: {
+           
+            required: true,
+            email:true,
+            
+        },
+         password: {
+           
+            required: true,
+            
+        },
+         re_pass: {
+                    equalTo: "#password"
+                },
+        
+    },
+    messages: {
+       
+         name: {
+           
+            required: "Please enter  Name.",
+          
+            
+        },
+         email: {
+           
+            required: "Please enter  Email.",
+            email:"Please Enter Proper Email",
+            
+        },
+         mobile: {
+           
+            required: "Please enter  Mobile.",
+            number:"Please Enter Proper Mobile",
+            maxlength:"Please Enter Proper Mobile",
+            minlength:"Please Enter Proper Mobile",
+            
+        },
+         password: {
+           
+            required: "Please enter  Password.",
+            
+            
+        },
+        re_pass:{
+           equalTo: "Password Not Match.",
+        }
+        
+       
+         
+    },
+        submitHandler: function (form) { // for demo
+          form =$('#register_form').serialize();
+          var  action = $('#action').val();
+          var  email = $('#email').val();
+          // var  email = $('#email').val();
+         
+     $.ajax({
+            url: "https://digitalbcards.in/api/register/", 
+            method: "POST",
+            data:form, 
+            dataType:"json",            
+           
+            success: function(data) {
+              if(data.status == 0){
+               
+                // myApp.alert(data.message);
+                $('#toast').html(data.message);
+                tost();
+              }else{
+
+               window.localStorage.setItem("login",1);
+               window.localStorage.setItem("email",email);
+                // myApp.alert(data.message);
+                  $('#toast').html(data.message);
+// $$('#home').trigger("click");
+                tost();
+    
+            //window.location.href = "home.html";
+            location.reload();
+              }
+            //location.reload();
+          }
+        })
+            return false; // for demo
+        }
+    });
+
+
+function tost(){
+
+$('#toast').addClass('show-toast');
+setTimeout(function(){ 
+$('#toast').removeClass('show-toast');
+ }, 1200);
+}
+           })
+           	</script>
+</body>
