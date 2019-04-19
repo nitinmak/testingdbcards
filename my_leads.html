@@ -25,46 +25,34 @@
 </div>
 <div class="page-content header-clear-larger">
 
-<div class="content-box content-box-full bottom-0">
+<div class="content-box content-box-full bottom-0" style="overflow: scroll;">
 <table class="table-borders-dark top-15 round-element bg-white shadow-large">
+<thead style="overflow: scroll;">
+	
 <tr>
-<th class="bg-blue-dark color-white">Brand</th>
-<th class="bg-blue-dark color-white">Device</th>
-<th class="bg-blue-dark color-white">OS</th>
-<th class="bg-blue-dark color-white">Works</th>
-<th class="bg-blue-dark color-white">Works</th>
-<th class="bg-blue-dark color-white">Works</th>
+
+
+          <th class="bg-blue-dark color-white">Name</th>
+          <th class="bg-blue-dark color-white">Email</th>
+          <th class="bg-blue-dark color-white">Mobile</th>
+          <th class="bg-blue-dark color-white">Mobile2</th>
+          <th class="bg-blue-dark color-white">WhatsApp</th>
+          <th class="bg-blue-dark color-white">Company Name</th>
+          <th class="bg-blue-dark color-white">Position</th>
+          <th class="bg-blue-dark color-white">Address</th>
+          <th class="bg-blue-dark color-white">Address2</th>
+          <th class="bg-blue-dark color-white">City</th>
+          <th class="bg-blue-dark color-white">Zip Code</th>
+          <th class="bg-blue-dark color-white">State</th>
+          <th class="bg-blue-dark color-white">Country</th>
+
 </tr>
-<tr>
-<td class="bg-highlight">Apple</td>
-<td>iPhone</td>
-<td>iOS</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td class="bg-highlight">Android</td>
-<td>Pixel</td>
-<td>Android</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td class="bg-highlight">Nope</td>
-<td>Nope</td>
-<td>nOS</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td class="bg-highlight">Nope</td>
-<td>Nope</td>
-<td>nOS</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td class="bg-highlight">Nope</td>
-<td>Nope</td>
-<td>nOS</td>
-<td>Yes</td>
-</tr>
+</thead>	
+<tbody id="leads">
+	
+</tbody>
+
+
 
 </table>
 </div>
@@ -213,4 +201,26 @@ You can setup awesome notifications in a menu as well, add useful news and info 
 <script type="text/javascript" src="scripts/jquery.js"></script>
 <script type="text/javascript" src="scripts/plugins.js"></script>
 <script type="text/javascript" src="scripts/custom.js"></script>
+<script type="text/javascript">
+	  $(document).ready(function () {
+	  		 var user_id =  window.localStorage.getItem("user_id");
+	  		 //alert(user_id);
+	  		 $.ajax({
+            url: "https://digitalbcards.in/api/leads/", 
+            method: "POST",
+            data:{user_id:user_id,secrete:"virus"}, 
+            dataType:"json",            
+           
+            success: function(data) {
+                // var data = JSON.stringify(data);
+//alert(data);
+$('#leads').html(data);
+            //    $('#username').html(data.name);
+             //   $('#user_image').attr("src",'https://digitalbcards.in/upload/'+data.profile_img);
+              
+            //location.reload();
+          }
+        })
+	  })
+</script>
 </body>
