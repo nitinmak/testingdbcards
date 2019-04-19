@@ -1,179 +1,144 @@
-<!DOCTYPE HTML>
-<html lang="en">
-
-<!-- Mirrored from enableds.com/products/kolor3/home-login.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 16 Apr 2019 08:17:16 GMT -->
+<!DOCTYPE html>
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
-<title>Kolor | HTML, CSS & JS Mobile Template | Epsilon X </title>
-<link rel="stylesheet" type="text/css" href="fonts/css/fontawesome-all.min.css">
-<link rel="stylesheet" type="text/css" href="styles/framework.css">
-<link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+    <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *"> -->
+
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- Your app title -->
+    <title>My App</title>
+
+    <!-- This template defaults to the iOS CSS theme. To support both iOS and material design themes, see the Framework7 Tutorial at the link below:
+        http://www.idangero.us/framework7/tutorials/maintain-both-ios-and-material-themes-in-single-app.html
+     -->
+
+    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.min.css">
+    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="login/css/style.css" type="text/css" media="all" />
+    <!-- Style-CSS -->
+    <link href="login/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Font-Awesome-Icons-CSS -->
+    <!-- //css files -->
+
+    <!-- web-fonts -->
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
+     rel="stylesheet">
 </head>
-<body class="bg-white">
-<div id="preloader" class="preloader-light">
-<h1 class="center-text color-black ultrabold uppercase bottom-0 fa-2x">Kolor</h1>
-<div id="preload-spinner"></div>
-<p>Beautifully Crafted UI & UX.</p>
-<em>This will only take a second. It's totally worth it!</em>
-</div>
-<div id="page-transitions" class="page-build bg-white">
-<div class="page-content page-content-full">
-<!-- <a href="#" class="cover-back-button back-button"><i class="fa fa-chevron-left font-12 color-white"></i></a> -->
-<!-- <a href="index.html" class="cover-home-button"><i class="fa fa-home font-14 color-white"></i></a> -->
-<div class="cover-item cover-item-full" style="background-image:url(images/pictures_vertical/bg10.jpg);">
-<div class="cover-content-center">
-<div class="page-login bg-white top-0">
-<img class="preload-image login-bg shadow-large responsive-image bottom-0" src="images/pictures/9.jpg" alt="img">
-<img class="preload-image login-image shadow-icon-large" src="images/pictures/0s.png" data-src="images/pictures/0s.png" alt="img">
-   <form id="login_form" method="post">
-<div class="content bottom-0">
-<h3 class="uppercase ultrabold top-10 bottom-0">Login</h3>
-<p class="smaller-text bottom-15">Hello, stranger! Please enter your credentials below.</p>
-<div class="page-login-field top-15">
-<i class="fa fa-user"></i>
-<input type="email" name="email" id="email" placeholder="Username">
 
-</div>
-<div class="page-login-field bottom-20">
-<i class="fa fa-lock"></i>
-<input type="password" name="password" id="password" placeholder="Password">
+<body>
+    <!-- Status bar overlay for full screen mode (PhoneGap) -->
+    <div class="statusbar-overlay"></div>
 
-</div>
-<div class="page-login-links bottom-10">
-<a class="forgot float-right" href="register.html" ><i class="fa fa-user float-right"></i>Create Account</a>
-<a class="create float-left" href="#"><i class="fa fa-eye"></i>Forgot Password</a>
-<div class="clear"></div>
-</div>
-<input type="hidden" value="virus" name="secrete"  >
-<input type="submit" class="button button-green button-full shadow-icon-large button-round button-s uppercase ultrabold" value="LOGIN">
-<a href="#"   data-menu="attention" data-menu-type="menu-box-modal"></a>
-<!-- <i class="fa fa-exclamation-circle color-yellow-dark top-10 font-16"></i> -->
-<span id="alert_msg"></span>
-</div>
-</form>
-</div>
-</div>
+    <!-- Panels overlay-->
+    <div class="panel-overlay"></div>
+    <!-- Left panel with reveal effect-->
+    <div class="panel panel-left panel-reveal">
+        <div class="content-block">
+            <p>Left panel content goes here</p>
+        </div>
+    </div>
 
+    <!-- Views -->
+    <div class="views">
+        <!-- Your main view, should have "view-main" class -->
+        <div class="view view-main">
+            <!-- Top Navbar-->
+            <div class="navbar" style="display: none;">
+                <div class="navbar-inner">
+                    <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
+                    <div class="center sliding">Awesome App</div>
+                    <div class="right">
+                        <!--
+                          Right link contains only icon - additional "icon-only" class
+                          Additional "open-panel" class tells app to open panel when we click on this link
+                        -->
+                        <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+            <div class="pages navbar-through toolbar-through">
+                <!-- Page, "data-page" contains page name -->
+                <div data-page="index" class="page">
+                    <!-- Scrollable page content -->
+                    <div class="page-content" style="padding: 0px;">
+                       <div class="main-bg">
+        <!-- title -->
+        <h1> Login </h1>
+        <!-- //title -->
+        <!-- content -->
+        <div class="sub-main-w3">
+            <div class="bg-content-w3pvt">
+                <div class="top-content-style">
+                    <img src="login/images/user.jpg" alt="" />
+                </div>
+                <form id="login_form" method="post">
+                    <p class="legend">Login Here<span class="fa fa-hand-o-down"></span></p>
+                    <div class="input">
+                        <input type="email" placeholder="Email" name="email" required />
+                        <span class="fa fa-envelope"></span>
+                    </div>
+                    <div class="input">
+                        <input type="password" placeholder="Password" name="password" required />
+                        <span class="fa fa-unlock"></span>
+                    </div>
+                <input type="hidden" value="virus" name="secrete"  >
 
-<div class="menu menu-box-modal gradient-yellow-dark shadow-large" id="attention" data-menu-height="315">
-<div class="content">
-<h1 class="center-text top-15 bottom-30"><i class="fa fa-exclamation font-30 icon-circle icon-l bg-white color-black shadow-icon-large"></i></h1>
-<h1 id="error_msg_title" class="color-black uppercase ultrabold center-text bottom-10 font-27">WARNING</h1>
-<p class="color-black center-text bottom-30 opacity-50 font-14" id="error_msg" >
-This is a warning box, it can set it to come in from the bottom, top or even as a modal. Tap to continue.
-</p>
-<a href="#" class="close-menu button button-round button-xs button-white uppercase ultrabold button-center shadow-icon-small">Close</a>
-</div>
-</div>
-<div class="cover-overlay overlay bg-black opacity-90"></div>
-</div>
+                     <a href="#" id="submitdata" class="btn submit">
+                        <span class="fa fa-sign-in"></span>
+                    </a>
+                </form>
+                <a href="home.html" id="home">
+                <a href="register.html" class="bottom-text-w3ls">Create Account</a>
+                <a href="#" class="bottom-text-w3ls">Forgot Password?</a>
+            </div>
+        </div>
+        <!-- //content -->
+        <!-- copyright -->
+      <!--   <div class="copyright">
+            <h2>&copy; 2019 Latest Login Form. All rights reserved | Design by
+                <a href="http://w3layouts.com" target="_blank">W3layouts</a>
+            </h2>
+        </div> -->
+        <!-- //copyright -->
+    </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Bottom Toolbar-->
+           <!--  <div class="toolbar">
+                <div class="toolbar-inner">
+                   
+                    <a href="#" class="link">Link 1</a>
+                    <a href="#" class="link">Link 2</a>
+                </div>
+            </div> -->
+        </div>
+    </div>
 
-</div>
-</div>
-<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="scripts/jquery.js"></script>
-<script type="text/javascript" src="scripts/plugins.js"></script>
-<script type="text/javascript" src="scripts/custom.js"></script>
-<script type="text/javascript" src="scripts/jquery.validate.js"></script>
- <script type="text/javascript">
-     // $('#alert_msg').click();
-           $(document).ready(function () {
-// window.localStorage.setItem("login",0);
-var islogin = window.localStorage.getItem("login");
-// alert(islogin); 
-
-if(islogin == 1){
-//     $('#home').trigger("click");
- window.location.href = "home.html"
-  }
-
-
-    $('#login_form').validate({ // initialize the plugin
-        errorLabelContainer: "#cs-error-note",
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
+    <script type="text/javascript" src="js/my-app.js"></script>
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.validate.js"></script>
    
-     errorClass: 'errors',
-    rules: {
-     
-       
-        email: {
-           
-            required: true,
-            email:true,
-            
-        },
-         password: {
-           
-            required: true,
-            
-        },
-        
-    },
-    messages: {
-       
-        
-         email: {
-           
-            required: "Please enter  Email.",
-            email:"Please Enter Proper Email",
-            
-        },
-         password: {
-           
-            required: "Please enter  Password.",
-            
-            
-        },
-        
-       
-         
-    },
-        submitHandler: function (form) { // for demo
-          form =$('#login_form').serialize();
-          var  action = $('#action').val();
-          var  email = $('#email').val();
-          $('#myOverlay').show();
-    $('#loadingGIF').show();
-     $.ajax({
-            url: "https://digitalbcards.in/api/login/", 
-            method: "POST",
-            data:form, 
-            dataType:"json",            
-           
-            success: function(data) {
-              if(data.status == 0){
-              	   $('#icon').html('<i class="fa fa-exclamation font-30 icon-circle icon-l bg-white color-black shadow-icon-large"></i>');
-    	$('#error_msg_title').html('Login Failed');            
-    	$('#error_msg').html(data.message);            
-$('#attention').addClass('active-menu-box-modal');
-
-	
-                // alert(data.message);
-              }else{
-
-                window.localStorage.setItem("login",1);
-                window.localStorage.setItem("email",email);
-
-               // alert(data.message);
-                
-              // $('#home').click();
-              $('#icon').html('<i class="fa fa-check font-30 icon-circle icon-l color-green-dark bg-white shadow-icon-large"></i>');
-              $('#error_msg_title').html('Login Succes');            
-    	$('#error_msg').html(data.message);            
-$('#attention').addClass('active-menu-box-modal');
- window.location.href = "home.html"
-              }
-            //location.reload();
-          }
-        })
-            return false; // for demo
-        }
-    });
-
-
-
-
-
-});
-     </script>
 </body>
+
+</html>
